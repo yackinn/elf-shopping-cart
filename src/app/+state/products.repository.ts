@@ -1,10 +1,10 @@
-import { coerceArray, createState, Store }                            from '@ngneat/elf';
+import { createState, Store } from '@ngneat/elf';
 import { addEntities, entitiesPropsFactory, selectAll, withEntities } from '@ngneat/elf-entities';
-import { Injectable }                                                 from '@angular/core';
+import { Injectable } from '@angular/core';
 
 const { cartEntitiesRef, withCartEntities } = entitiesPropsFactory('cart');
 
-interface Product {
+export interface Product {
   id: number,
   title: string,
   price: number,
@@ -27,14 +27,14 @@ const { state, config } = createState(
   withCartEntities<CartItem>()
 );
 
-export const store = new Store({ name: 'products', config, state });
 
 @Injectable({ providedIn: 'root' })
-export class ProductRepository {
-  products$ = store.pipe(selectAll());
+export class ProductsRepository {
+  // need to move it to top when fixing devtools
+  store = new Store({ name: 'products', config, state });
+  products$ = this.store.pipe(selectAll());
 
-  addProducts(product: Product | Product[]) {
-    const products = coerceArray(product);
-    store.update(addEntities(products));
+  addProducts(products: Product[]) {
+    this.store.update(addEntities(products));
   }
 }

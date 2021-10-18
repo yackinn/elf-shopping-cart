@@ -10,47 +10,49 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~12.1.0",
-    "@angular/common": "~12.1.0",
-    "@angular/compiler": "~12.1.0",
-    "@angular/core": "~12.1.0",
-    "@angular/forms": "~12.1.0",
-    "@angular/platform-browser": "~12.1.0",
-    "@angular/platform-browser-dynamic": "~12.1.0",
-    "@angular/router": "~12.1.0",
-    "@ngneat/effects": "^1.0.0-beta.1",
+    "@angular/animations": "~12.2.10",
+    "@angular/common": "~12.2.10",
+    "@angular/compiler": "~12.2.10",
+    "@angular/core": "~12.2.10",
+    "@angular/forms": "~12.2.10",
+    "@angular/platform-browser": "~12.2.10",
+    "@angular/platform-browser-dynamic": "~12.2.10",
+    "@angular/router": "~12.2.10",
+    "@ngneat/effects": "^1.0.0-beta.2",
     "@ngneat/effects-ng": "^1.0.0-beta.0",
     "@ngneat/elf": "^1.0.0-beta.5",
     "@ngneat/elf-cli-ng": "^1.0.0-beta.1",
     "@ngneat/elf-devtools": "^1.0.0-beta.2",
-    "@ngneat/elf-entities": "^1.0.0-beta.6",
+    "@ngneat/elf-entities": "^1.0.0-beta.9",
     "@ngneat/elf-pagination": "^1.0.0-beta.2",
-    "@ngneat/elf-persist-state": "^1.0.0-beta.2",
-    "@ngneat/elf-requests": "^1.0.0-beta.4",
+    "@ngneat/elf-persist-state": "^1.0.0-beta.4",
+    "@ngneat/elf-requests": "^1.0.0-beta.5",
     "@ngneat/elf-state-history": "^1.0.0-beta.2",
-    "rxjs": "~6.6.7",
-    "tslib": "^2.2.0",
+    "rxjs": "~7.4.0",
+    "tslib": "^2.3.1",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~12.1.0",
-    "@angular/cli": "~12.1.0",
-    "@angular/compiler-cli": "~12.1.0",
+    "@angular-devkit/build-angular": "~12.2.10",
+    "@angular/cli": "~12.2.10",
+    "@angular/compiler-cli": "~12.2.10",
     "@ngneat/elf-cli": "^1.0.0-beta.7",
-    "@types/jasmine": "~3.6.0",
-    "@types/node": "^12.11.1",
-    "jasmine-core": "~3.7.0",
-    "karma": "~6.3.0",
+    "@types/jasmine": "~3.10.0",
+    "@types/node": "^16.11.1",
+    "jasmine-core": "~3.10.0",
+    "karma": "~6.3.4",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.0.3",
-    "karma-jasmine": "~4.0.0",
-    "karma-jasmine-html-reporter": "^1.5.0",
-    "typescript": "~4.3.2"
+    "karma-jasmine": "~4.0.1",
+    "karma-jasmine-html-reporter": "^1.7.0",
+    "typescript": "~4.3.5"
   },
   "elf": {
     "cli": {
       "repoTemplate": "class",
-      "plugins": ["@ngneat/elf-cli-ng"]
+      "plugins": [
+        "@ngneat/elf-cli-ng"
+      ]
     }
   }
 }

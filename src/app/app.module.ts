@@ -1,11 +1,11 @@
-import { NgModule }             from '@angular/core';
-import { BrowserModule }        from '@angular/platform-browser';
-import { AppRoutingModule }     from './app-routing.module';
-import { AppComponent }         from './app.component';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list/product-list.component';
-import { devTools }             from '@ngneat/elf-devtools';
-import { EffectsNgModule }      from '@ngneat/effects-ng';
-import { ProductEffects }       from './+state/product.effects';
+import { EffectsNgModule } from '@ngneat/effects-ng';
+import { ProductsEffects } from './+state/products.effects';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,14 +15,11 @@ import { ProductEffects }       from './+state/product.effects';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    EffectsNgModule.forRoot([ProductEffects])
+    HttpClientModule,
+    EffectsNgModule.forRoot([ProductsEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor() {
-    console.log('construct');
-    devTools();
-  }
 }
