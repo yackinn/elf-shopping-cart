@@ -27,14 +27,13 @@ const { state, config } = createState(
   withCartEntities<CartItem>()
 );
 
+const store = new Store({ name: 'products', config, state });
 
 @Injectable({ providedIn: 'root' })
 export class ProductsRepository {
-  // need to move it to top when fixing devtools
-  store = new Store({ name: 'products', config, state });
-  products$ = this.store.pipe(selectAll());
+  products$ = store.pipe(selectAll());
 
   addProducts(products: Product[]) {
-    this.store.update(addEntities(products));
+    store.update(addEntities(products));
   }
 }
