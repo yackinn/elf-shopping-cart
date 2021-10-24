@@ -6,11 +6,13 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { EffectsNgModule } from '@ngneat/effects-ng';
 import { ProductsEffects } from './+state/products.effects';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductListItemComponent } from './product-list/product-list-item/product-list-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductListComponent
+    ProductListComponent,
+    ProductListItemComponent
   ],
   imports: [
     BrowserModule,

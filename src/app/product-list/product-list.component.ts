@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Actions } from '@ngneat/effects-ng';
-import { loadProducts } from '../+state/products.actions';
+import { Component, OnInit }           from '@angular/core';
+import { Actions }                     from '@ngneat/effects-ng';
+import { addToCart, loadProducts }     from '../+state/products.actions';
+import { Product, ProductsRepository } from '../+state/products.repository';
 
 @Component({
   selector: 'app-product-list',
@@ -9,11 +10,17 @@ import { loadProducts } from '../+state/products.actions';
 })
 export class ProductListComponent implements OnInit {
 
-  constructor(private actions: Actions) {
+  constructor(
+    private actions: Actions,
+    public productsRepository: ProductsRepository
+  ) {
   }
 
   ngOnInit(): void {
     this.actions.dispatch(loadProducts());
   }
 
+  onAddToCart(product: Product) {
+    this.actions.dispatch(addToCart(product));
+  }
 }

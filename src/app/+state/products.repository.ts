@@ -1,6 +1,6 @@
-import { createState, Store } from '@ngneat/elf';
-import { addEntities, entitiesPropsFactory, selectAll, withEntities } from '@ngneat/elf-entities';
-import { Injectable } from '@angular/core';
+import { createState, Store }                                                         from '@ngneat/elf';
+import { addEntities, entitiesPropsFactory, selectAll, upsertEntities, withEntities } from '@ngneat/elf-entities';
+import { Injectable }                                                                 from '@angular/core';
 
 const { cartEntitiesRef, withCartEntities } = entitiesPropsFactory('cart');
 
@@ -19,7 +19,7 @@ export interface Product {
 
 interface CartItem {
   id: Product['id'];
-  quantity: number;
+  quantity: number; // todo this shouldn't be optional
 }
 
 const { state, config } = createState(
@@ -35,5 +35,17 @@ export class ProductsRepository {
 
   addProducts(products: Product[]) {
     store.update(addEntities(products));
+  }
+
+  updateCart(id: Product['id']) {
+    store.update(upsertEntities(id, {
+      updater: (entity) => {
+        return { ...entity, quantity: entity.quantity + 1 };
+      },
+      creator: (id) => {
+        return { id, quantity: 1 };
+      },
+      ref: cartEntitiesRef
+    }));
   }
 }
