@@ -1,4 +1,6 @@
-<product-list-item *ngFor="let product of productsRepository.products$ | async"
-                   [product]="product"
-                   (addToCart)="onAddToCart($event)">
-</product-list-item>
+<div class="product-list">
+  <product-list-item *ngFor="let product of productsRepository.products$ | async"
+                     [product]="product"
+                     (addToCart)="onAddToCart($event)">
+  </product-list-item>
+</div>

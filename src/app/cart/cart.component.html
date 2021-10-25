@@ -1,0 +1,13 @@
+<div class="cart">
+  <div class="head">
+    <h3>Your cart</h3>
+    <button (click)="closeCart.emit()">Close cart</button>
+  </div>
+
+  <div class="cart-list">
+    <cart-list-item *ngFor="let cartItem of productsRepository.cartItems$ | async"
+                    [cartItem]="cartItem"
+                    (removeItem)="onRemoveCartItem($event)">
+    </cart-list-item>
+  </div>
+</div>

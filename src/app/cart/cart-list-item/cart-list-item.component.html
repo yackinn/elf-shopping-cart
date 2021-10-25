@@ -1,0 +1,8 @@
+<div class="cart-list-item">
+  <img [src]="cartItem.image">
+  <div class="data">
+    <h4 class="title">{{cartItem.title}}</h4>
+    <h4 class="price">{{cartItem.price | currency}}</h4>
+    <button (click)="removeItem.emit(cartItem)">Remove item</button>
+  </div>
+</div>

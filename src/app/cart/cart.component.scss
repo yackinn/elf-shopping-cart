@@ -1,0 +1,18 @@
+:host {
+  position         : fixed;
+  right            : 0;
+  top              : 0;
+  height           : 100%;
+  width            : 300px;
+  box-shadow       : 0 4px 20px 1px rgba(0, 0, 0, .2);
+  background-color : #fff;
+
+  .cart {
+    padding : 20px
+  }
+
+  .head {
+    display         : flex;
+    justify-content : space-between;
+  }
+}

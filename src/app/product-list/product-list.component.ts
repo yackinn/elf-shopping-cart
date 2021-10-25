@@ -1,6 +1,6 @@
 import { Component, OnInit }           from '@angular/core';
 import { Actions }                     from '@ngneat/effects-ng';
-import { addToCart, loadProducts }     from '../+state/products.actions';
+import { addCartItem, loadProducts }   from '../+state/products.actions';
 import { Product, ProductsRepository } from '../+state/products.repository';
 
 @Component({
@@ -21,6 +21,6 @@ export class ProductListComponent implements OnInit {
   }
 
   onAddToCart(product: Product) {
-    this.actions.dispatch(addToCart(product));
+    this.actions.dispatch(addCartItem(product));
   }
 }

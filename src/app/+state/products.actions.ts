@@ -1,7 +1,9 @@
 import { actionsFactory, props } from '@ngneat/effects';
-import { Product }               from './products.repository';
+import { CartItem, Product }     from './products.repository';
 
 export const productsActions = actionsFactory('products');
 
 export const loadProducts = productsActions.create('Load Products');
-export const addToCart    = productsActions.create('Add Product To Cart', props<Product>());
+
+export const addCartItem    = productsActions.create('Add Cart Item', props<Product>());
+export const removeCartItem = productsActions.create('Remove Cart item', props<CartItem & Product>());
