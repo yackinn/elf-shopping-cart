@@ -1,1 +1,5 @@
-<p>snackbar works!</p>
+<div class='snackbar' *ngIf='isShowing | async'>
+  <button (click)='uiRepository.updateSnackbar({isShowing: false})'>close</button>
+  <h3 class='title'>{{title | async}}</h3>
+  <p class='description'>{{description | async}}</p>
+</div>

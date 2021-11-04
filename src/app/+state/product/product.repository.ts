@@ -39,7 +39,7 @@ const { state, config } = createState(
 const store = new Store({ name: 'products', config, state });
 
 @Injectable({ providedIn: 'root' })
-export class ProductsRepository {
+export class ProductRepository {
   products$  = store.pipe(selectAll());
   cartItems$ = combineLatest([
     store.pipe(selectEntities()),
@@ -52,7 +52,7 @@ export class ProductsRepository {
     store.update(addEntities(products));
   }
 
-  updateCart(id: Product['id']) {
+  addCartItem(id: Product['id']) {
     store.update(upsertEntities(id, {
       updater: (entity) => ({ ...entity, quantity: entity.quantity + 1 }),
       creator: (id) => ({ id, quantity: 1 }),

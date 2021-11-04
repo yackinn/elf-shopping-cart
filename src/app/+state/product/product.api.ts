@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Product }    from './products.repository';
+import { Product }    from './product.repository';
 
 @Injectable({ providedIn: 'root' })
-export class ProductsApi {
+export class ProductApi {
 
   constructor(
     private httpClient: HttpClient

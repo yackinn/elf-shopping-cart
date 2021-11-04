@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { CartItem, Product }                      from '../../+state/products.repository';
+import { CartItem, Product }                      from '../../+state/product/product.repository';
 
 @Component({
   selector: 'cart-list-item',
